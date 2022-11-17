@@ -7,4 +7,6 @@ export const ROUTES = {
   BOOKING: '/book-appointment',
   PROFILE: '/profile',
   APPOINTMENT: '/appointment',
+  PROFILE_DETAILS: '/profile/details',
+  PROFILE_BOOKINGS: '/profile/bookings',
 };

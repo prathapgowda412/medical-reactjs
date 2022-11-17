@@ -1,4 +1,5 @@
 import axios from 'axios';
+import LocalstorageService from '../utils/storage/localstorage';
 
 axios.defaults.baseURL = 'http://localhost:5001/';
 
@@ -11,6 +12,10 @@ axios.defaults.headers.common['Access-Control-Allow-Headers'] =
   'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version';
 
 axios.defaults.headers.common['Access-Control-Max-Age'] = '600';
+
+let userToken = LocalstorageService.getPatientToken();
+console.log('user token', userToken);
+if (userToken) axios.defaults.headers.common['auth-token'] = userToken;
 
 axios.interceptors.response.use(
   function (response) {

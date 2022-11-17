@@ -29,4 +29,22 @@ export default class LocalstorageService {
     let data = JSON.stringify(value);
     localStorage.setItem('patient-auth-token', data);
   }
+  static getPatientdata() {
+    if (typeof window !== 'undefined') {
+      // Client-side-only code
+      let val = window.localStorage.getItem('patient-data');
+      if (val) return JSON.parse(val);
+      return null;
+    }
+    return null;
+  }
+  static getPatientToken() {
+    if (typeof window !== 'undefined') {
+      // Client-side-only code
+      let val = window.localStorage.getItem('patient-auth-token');
+      if (val) return JSON.parse(val);
+      return null;
+    }
+    return null;
+  }
 }

@@ -18,6 +18,7 @@ import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../../utils/ROUTES';
 import { useAuth } from '../../../contexts/auth/authContext';
+import AuthMenu from './auth-menu';
 
 const solutions = [
   {
@@ -102,7 +103,6 @@ function classNames(...classes) {
 
 export default function Header() {
   const { isAuthorized, user } = useAuth();
-  console.log('user', user);
   return (
     <header className=''>
       <div className='relative mx-auto max-w-7xl px-4 sm:px-6'>
@@ -118,7 +118,12 @@ export default function Header() {
             </Link>
           </div>
           {isAuthorized ? (
-            'welcome'
+            <Link
+              to={ROUTES.PROFILE_DETAILS}
+              className='whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900'
+            >
+              Profile
+            </Link>
           ) : (
             <div className=' items-center justify-end flex  lg:w-0'>
               <Link
