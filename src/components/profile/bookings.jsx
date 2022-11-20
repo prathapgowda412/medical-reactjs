@@ -1,16 +1,6 @@
 import React from 'react';
 import { CiCalendarDate, CiTimer } from 'react-icons/ci';
-const ProfileBookings = ({ bookings }) => {
-  return (
-    <div>
-      {bookings?.map((booking) => (
-        <BookingCard booking={booking?.booking} />
-      ))}
-    </div>
-  );
-};
-
-export default ProfileBookings;
+import Pagination from '../common/pagination/pagination';
 
 const BookingCard = ({ booking }) => {
   const { date, time, service, comments, doctor, status } = booking ?? {};
@@ -60,3 +50,5 @@ const BookingCard = ({ booking }) => {
     </div>
   );
 };
+
+export default BookingCard;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { ROUTES } from '../../../utils/ROUTES';
 import { useForm } from 'react-hook-form';
 import { useAuth } from '../../../contexts/auth/authContext';
@@ -17,14 +17,9 @@ const bloodgroups = [
 
 const SignUpForm = () => {
   const { register, handleSubmit, formState } = useForm();
-  // name, email, phone, password, dob, weight, height, bloodgroup
 
   const { patientRegister, isAuthorized } = useAuth();
-  console.log('isatuhroiesd', isAuthorized);
-  const handleSignUp = (data) => {
-    console.log('register data', data);
-    patientRegister(data);
-  };
+  if (isAuthorized) return <Navigate to={ROUTES.HOMEPAGE} />;
 
   return (
     <section className='bg-gray-50'>
@@ -35,7 +30,7 @@ const SignUpForm = () => {
               Sign Up
             </h1>
             <form
-              onSubmit={handleSubmit(handleSignUp)}
+              onSubmit={handleSubmit(patientRegister)}
               className='space-y-4 md:space-y-6'
               action='#'
             >
@@ -158,7 +153,7 @@ const SignUpForm = () => {
                     Height (cm)
                   </label>
                   <input
-                    type='height'
+                    type='number'
                     name='height'
                     id='height'
                     {...register('height', { required: true })}

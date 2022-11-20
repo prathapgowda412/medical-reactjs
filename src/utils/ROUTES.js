@@ -9,4 +9,7 @@ export const ROUTES = {
   APPOINTMENT: '/appointment',
   PROFILE_DETAILS: '/profile/details',
   PROFILE_BOOKINGS: '/profile/bookings',
+
+  ADMIN_BOOKINGS: '/admin/bookings',
+  ADMIN_PATIENTS: '/admin/patients',
 };

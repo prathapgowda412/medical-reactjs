@@ -8,19 +8,20 @@ import LocalstorageService from '../../utils/storage/localstorage';
 // import { useHistory } from 'react-router-dom';
 const initialState = {
   isAuthorized: true,
-  user: 'null',
-  token: null,
+  user: null,
+  adminToken: null,
+  isAdmin: false,
 };
 
-export const AuthContext = React.createContext(initialState);
+export const AdminAuthContext = React.createContext(initialState);
 
 export const AuthProvider = ({ children }) => {
   let navigate = useNavigate();
 
-  const [user, setUser] = useState(
+  const [admin, setAdmin] = useState(
     LocalstorageService.getPatientdata() ?? null
   );
-  const [userToken, setUserToken] = useState(
+  const [adminToken, setAdminToken] = useState(
     LocalstorageService.getPatientToken() ?? null
   );
   const [isAuthorized, setIsAuthorized] = useState(
@@ -31,8 +32,8 @@ export const AuthProvider = ({ children }) => {
 
   const patientLogout = useCallback(() => {
     LocalstorageService.removePatientData();
-    setUser(null);
-    setUserToken(null);
+    setAdmin(null);
+    setAdminToken(null);
     setIsAuthorized(false);
     navigate(ROUTES.HOMEPAGE);
   }, [navigate]);
@@ -43,11 +44,11 @@ export const AuthProvider = ({ children }) => {
         .then(({ data }) => {
           if (data?.success) {
             toast.success('Logged In Successfull');
-            setUser(data?.data?.patientData);
-            setUserToken(data?.data?.token);
+            setAdmin(data?.data?.patientData);
+            setAdminToken(data?.data?.token);
             setIsAuthorized(true);
-            LocalstorageService.storePatientdata(data?.data?.patientData);
-            LocalstorageService.storePatientToken(data?.data?.token);
+            LocalstorageService.storeAdmindata(data?.data?.patientData);
+            LocalstorageService.storeAdminToken(data?.data?.token);
             setAuthToken(data?.data?.token);
             navigate(ROUTES.HOMEPAGE);
           }
@@ -66,11 +67,11 @@ export const AuthProvider = ({ children }) => {
         .then(({ data }) => {
           if (data.success) {
             toast.success('Registered Successfull');
-            setUser(data?.data?.patientData);
-            setUserToken(data?.data?.token);
+            setAdmin(data?.data?.patientData);
+            setAdminToken(data?.data?.token);
             setIsAuthorized(true);
-            LocalstorageService.storePatientdata(data?.data?.patientData);
-            LocalstorageService.storePatientToken(data?.data?.token);
+            LocalstorageService.storeAdmintdata(data?.data?.patientData);
+            LocalstorageService.storeAdminToken(data?.data?.token);
 
             navigate(ROUTES.HOMEPAGE);
           }
@@ -84,19 +85,23 @@ export const AuthProvider = ({ children }) => {
 
   const value = React.useMemo(
     () => ({
-      user,
+      admin,
       isAuthorized,
       patientLogin,
       patientRegister,
       patientLogout,
     }),
-    [user, isAuthorized, patientRegister, patientLogin, patientLogout]
+    [admin, isAuthorized, patientRegister, patientLogin, patientLogout]
   );
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  return (
+    <AdminAuthContext.Provider value={value}>
+      {children}
+    </AdminAuthContext.Provider>
+  );
 };
 
-export const useAuth = () => {
-  const context = React.useContext(AuthContext);
+export const useAdminAuth = () => {
+  const context = React.useContext(AdminAuthContext);
   if (context === undefined) {
     throw new Error(`useAuth must be used within a AuthProvider`);
   }

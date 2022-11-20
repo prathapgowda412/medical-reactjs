@@ -1,35 +1,36 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { ROUTES } from '../../utils/ROUTES';
 
 const SectionTwo = () => {
   return (
-    <section className='bg-white dark:bg-gray-900'>
+    <section className='bg-white'>
       <div className='gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6'>
         <img
-          className='w-full dark:hidden'
-          src='https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup.svg'
+          className='w-full rounded-xl shadow-lg'
+          src='/assets/images/banner/doctors-image.png'
           alt='dashboard image'
         />
-        <img
-          className='w-full hidden dark:block'
-          src='https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg'
-          alt='dashboard image'
-        />
+
         <div className='mt-4 md:mt-0'>
-          <h2 className='mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white'>
-            Neque porro quisquam est qui dolorem ipsum quia .
+          <h2 className='mb-4 text-4xl tracking-tight font-extrabold text-gray-900'>
+            ABOUT US
           </h2>
-          <p className='mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-            tincidunt nibh urna, ut vestibulum ante vestibulum at. Etiam iaculis
-            at urna ac bibendum. Quisque vel dignissim justo. Cras nibh dui,
-            placerat eu magna eu, luctus tincidunt magna. Sed quis quam
-            dignissim, rhoncus nunc sed, ultricies enim.
+          <p className='mb-6 font-light text-gray-500 md:text-lg'>
+            <b className='font-bold'>SAMS</b> (Smart Appointment Management
+            System) is on a mission to make affordable access to high-quality
+            healthcare service available to everyone. For the benefit of
+            humanity, we are dedicated to achieving and maintaining excellence
+            in education, research, and healthcare. SAMS gives you access to
+            your health information and with SAMS's Advanced appointment booking
+            system, a patient can book their appointments in few clicks with
+            doctor of their choice.
           </p>
-          <a
-            href='#'
-            className='inline-flex items-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900'
+          <Link
+            to={ROUTES.ABOUTUS}
+            className='inline-flex items-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center '
           >
-            Get started
+            Read more
             <svg
               className='ml-2 -mr-1 w-5 h-5'
               fill='currentColor'
@@ -42,7 +43,7 @@ const SectionTwo = () => {
                 clipRule='evenodd'
               />
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

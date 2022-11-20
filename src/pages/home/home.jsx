@@ -14,7 +14,7 @@ const HomePage = () => {
       <FeaturedSection />
       <SectionTwo />
       <ContactusSection />
-      <BannerCTA />
+      {/* <BannerCTA /> */}
     </Layout>
   );
 };

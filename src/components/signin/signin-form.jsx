@@ -1,31 +1,18 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { ROUTES } from '../../utils/ROUTES';
 import { useAuth } from '../../contexts/auth/authContext';
 
 const SigninForm = () => {
   const { register, handleSubmit, setError, formState } = useForm();
 
-  const { patientLogin } = useAuth();
-  const handleLogin = (data) => {
-    // console.log('login data', data);
-    patientLogin(data);
-  };
+  const { patientLogin, isAuthorized } = useAuth();
+  if (isAuthorized) return <Navigate to={ROUTES.HOMEPAGE} />;
+
   return (
     <section className='bg-gray-50'>
       <div className='flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0'>
-        {/* <a
-          href='#'
-          className='flex items-center mb-6 text-2xl font-semibold text-gray-900'
-        >
-          <img
-            className='w-8 h-8 mr-2'
-            src='https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg'
-            alt='logo'
-          />
-          Flowbite
-        </a> */}
         <div className='w-full bg-white rounded-lg shadow  md:mt-0 sm:max-w-md xl:p-0'>
           <div className='p-6 space-y-4 md:space-y-6 sm:p-8'>
             <h1 className='text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl'>
@@ -33,7 +20,7 @@ const SigninForm = () => {
             </h1>
             <form
               className='space-y-4 md:space-y-6'
-              onSubmit={handleSubmit(handleLogin)}
+              onSubmit={handleSubmit(patientLogin)}
             >
               <div>
                 <label

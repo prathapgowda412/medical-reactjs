@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ButtonLoader from '../../components/common/loaders/button-loader';
+import Pagination from '../../components/common/pagination/pagination';
+import BookingCard from '../../components/profile/bookings';
 import ProfileBookings from '../../components/profile/bookings';
 import { useBookingsQuery } from '../../services/apis/fetchqueries';
 
 const BookingsPage = () => {
-  const { isLoading, data, isError } = useBookingsQuery();
+  const [pageSeq, setPageSeq] = useState(1);
 
+  const { isLoading, data, isError } = useBookingsQuery({ pageSeq });
   if (isLoading) return <ButtonLoader text={'Fetching Bookings'} />;
 
   if (isError)
@@ -19,7 +22,33 @@ const BookingsPage = () => {
       </div>
     );
 
-  return <ProfileBookings bookings={data?.data} />;
+  return (
+    <div>
+      {data && (
+        <>
+          {data?.data?.bookings.length > 0 ? (
+            <>
+              {data?.data?.bookings?.map((booking) => (
+                <BookingCard booking={booking} />
+              ))}
+              <Pagination
+                handlePage={setPageSeq}
+                currentPage={pageSeq}
+                totalPages={data?.data?.totalPages}
+              />
+            </>
+          ) : (
+            <div
+              className='p-4 mb-4 text-sm text-yellow-700 bg-yellow-100 rounded-lg'
+              role='alert'
+            >
+              No Bookings Found
+            </div>
+          )}
+        </>
+      )}
+    </div>
+  );
 };
 
 export default BookingsPage;

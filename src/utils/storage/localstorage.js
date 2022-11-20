@@ -47,4 +47,40 @@ export default class LocalstorageService {
     }
     return null;
   }
+  static removePatientData() {
+    localStorage.removeItem('patient-auth-token');
+    localStorage.removeItem('patient-data');
+  }
+
+  // for admin
+  static storeAdmindata(value) {
+    let data = JSON.stringify(value);
+    localStorage.setItem('admin-data', data);
+  }
+  static storeAdminToken(value) {
+    let data = JSON.stringify(value);
+    localStorage.setItem('admin-auth-token', data);
+  }
+  static getAdmintdata() {
+    if (typeof window !== 'undefined') {
+      // Client-side-only code
+      let val = window.localStorage.getItem('admin-data');
+      if (val) return JSON.parse(val);
+      return null;
+    }
+    return null;
+  }
+  static getAdminToken() {
+    if (typeof window !== 'undefined') {
+      // Client-side-only code
+      let val = window.localStorage.getItem('admin-auth-token');
+      if (val) return JSON.parse(val);
+      return null;
+    }
+    return null;
+  }
+  static removeAdminData() {
+    localStorage.removeItem('admin-auth-token');
+    localStorage.removeItem('admin-data');
+  }
 }

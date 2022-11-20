@@ -14,8 +14,13 @@ import SignupPage from './pages/signup/signup';
 import { ROUTES } from './utils/ROUTES';
 import BookingsPage from './pages/profile/bookingsPage';
 import ProfileDetailsPage from './pages/profile/profileDetails';
+import { useAuth } from './contexts/auth/authContext';
+import ADminBookingsPage from './pages/admin/bookings';
+import AdminPatientsPage from './pages/admin/patients';
+import AdminLayout from './components/admin-components/layout/admin-layout';
 
 export function Router() {
+  const { isAuthorized } = useAuth();
   let routes = useRoutes([
     { path: ROUTES.ABOUTUS, element: <AboutUs /> },
     { path: ROUTES.SIGNIN, element: <SignInPage /> },
@@ -47,6 +52,27 @@ export function Router() {
       ],
     },
     { path: ROUTES.APPOINTMENT, element: <AppointmentPage /> },
+    {
+      path: '/admin',
+      children: [
+        {
+          path: ROUTES.ADMIN_BOOKINGS,
+          element: (
+            <AdminLayout>
+              <ADminBookingsPage />
+            </AdminLayout>
+          ),
+        },
+        {
+          path: ROUTES.ADMIN_PATIENTS,
+          element: (
+            <AdminLayout>
+              <AdminPatientsPage />
+            </AdminLayout>
+          ),
+        },
+      ],
+    },
   ]);
   return routes;
 }

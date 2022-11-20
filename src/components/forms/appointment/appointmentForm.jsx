@@ -10,21 +10,19 @@ const AppointmentBookingForm = () => {
   const { register, formState, handleSubmit } = useForm();
 
   const bookAppoint = (data) => {
-    console.log('data', data);
     BookingService.bookAppoint(data)
       .then(({ data }) => {
-        console.log('resp', data);
         if (data?.success) {
           toast.success('Booked SuccessFull');
           navigate(ROUTES.HOMEPAGE);
         } else {
           toast.error('Cannot Book');
-          console.log('ERROR', data?.message);
+          console.error('ERROR', data?.message);
         }
       })
       .catch((error) => {
         toast.error('Something went wrong');
-        console.log('ERROR', error);
+        console.error('ERROR', error);
       });
   };
 
@@ -125,7 +123,7 @@ const AppointmentBookingForm = () => {
             type='submit'
             className='inline-flex items-center  mt-4 sm:mt-6  text-center bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-200  hover:bg-primary-800  bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 '
           >
-            Add product
+            Book
           </button>
         </form>
       </div>

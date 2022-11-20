@@ -7,46 +7,44 @@ import {
 
 const features = [
   {
-    name: 'Competitive exchange rates',
+    name: 'Cardiology',
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+      'Experts who assist with the care of your heart and blood vessels. Cardiovascular problems can be treated or prevented by them. They may also focus on certain conditions, such as those involving irregular cardiac rhythms, heart failure, or inherited heart conditions.',
     icon: GlobeAltIcon,
   },
   {
-    name: 'No hidden fees',
+    name: 'General Physicians',
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+      'These doctors are highly skilled professionals that offer a variety of non-surgical medical services to adult patients. They treat patients with challenging, serious, or uncommon medical conditions and keep seeing them until the conditions are resolved or stabilized.',
     icon: ScaleIcon,
   },
   {
-    name: 'Transfers are instant',
+    name: 'Gastroenterologists',
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+      'Diagnosing, treating, and acting to prevent gastrointestinal problems (stomach and intestines) and hepatological (liver, pancreas, and more) illnesses are the responsibilities of gastroenterologists.',
     icon: BoltIcon,
   },
   {
-    name: 'Mobile notifications',
+    name: 'Psychologists',
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+      "Experts who work to comprehend and explain people's feelings, thoughts, and actions. They create hypotheses about the thoughts and emotions that affect people using methods including observation, evaluation, and experimentation.",
     icon: DevicePhoneMobileIcon,
   },
 ];
 
 export default function FeaturedSection() {
   return (
-    <div className='bg-white py-24 sm:py-32 lg:py-40'>
+    <div className='bg-gray-100 py-24 sm:py-32 lg:py-20'>
       <div className='mx-auto max-w-7xl px-6 lg:px-8'>
         <div className='sm:text-center'>
-          <h2 className='text-lg font-semibold leading-8 text-indigo-600'>
-            Transactions
+          <h2 className='mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
+            Top-searched specialties
           </h2>
-          <p className='mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
-            A better way to send money
-          </p>
-          <p className='mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-600'>
+
+          {/* <p className='mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-600'>
             Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam
             voluptatum cupiditate veritatis in accusamus quisquam.
-          </p>
+          </p> */}
         </div>
 
         <div className='mt-20 max-w-lg sm:mx-auto md:max-w-none'>
