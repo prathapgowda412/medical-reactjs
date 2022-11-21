@@ -2,15 +2,15 @@ import React from 'react';
 
 const AdminHeader = () => {
   return (
-    <header>
-      <nav className='bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800'>
+    <header className='shadow-lg'>
+      <nav className='bg-[#2b3d5b] border-gray-200 px-4 lg:px-6 py-2.5'>
         <div className='flex flex-wrap justify-between items-center'>
           <div className='flex justify-start items-center'>
             <button
               id='toggleSidebar'
               aria-expanded='true'
               aria-controls='sidebar'
-              className='hidden p-2 mr-3 text-gray-600 rounded cursor-pointer lg:inline hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700'
+              className='hidden p-2 mr-3 text-white rounded cursor-pointer lg:inline hover:text-gray-900 hover:bg-gray-100'
             >
               <svg
                 className='w-6 h-6'
@@ -28,7 +28,7 @@ const AdminHeader = () => {
             <button
               aria-expanded='true'
               aria-controls='sidebar'
-              className='p-2 mr-2 text-gray-600 rounded-lg cursor-pointer lg:hidden hover:text-gray-900 hover:bg-gray-100 focus:bg-gray-100 dark:focus:bg-gray-700 focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'
+              className='p-2 mr-2 text-gray-600 rounded-lg cursor-pointer lg:hidden hover:text-gray-900 hover:bg-gray-100 focus:bg-gray-100 focus:ring-2 focus:ring-gray-100'
             >
               <svg
                 aria-hidden='true'
@@ -68,7 +68,7 @@ const AdminHeader = () => {
                 className='mr-3 h-8'
                 alt='FlowBite Logo'
               />
-              <span className='self-center text-2xl font-semibold whitespace-nowrap dark:text-white'>
+              <span className='self-center text-2xl font-semibold whitespace-nowrap '>
                 Flowbite
               </span> */}
             </a>
@@ -78,18 +78,18 @@ const AdminHeader = () => {
 
             {/* Dropdown menu */}
             <div
-              className='hidden overflow-hidden z-50 my-4 max-w-sm text-base list-none bg-white rounded divide-y divide-gray-100 shadow-lg dark:divide-gray-600 dark:bg-gray-700'
+              className='hidden overflow-hidden z-50 my-4 max-w-sm text-base list-none bg-white rounded divide-y divide-gray-100 shadow-lg'
               id='notification-dropdown'
             >
               <a
                 href='#'
-                className='block py-2 text-base font-normal text-center text-gray-900 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:text-white dark:hover:underline'
+                className='block py-2 text-base font-normal text-center text-gray-900 bg-gray-50 hover:bg-gray-100'
               ></a>
             </div>
 
             <button
               type='button'
-              className='flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600'
+              className='flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300'
               id='user-menu-button'
               aria-expanded='false'
               data-dropdown-toggle='dropdown'
@@ -103,26 +103,26 @@ const AdminHeader = () => {
             </button>
             {/* Dropdown menu */}
             <div
-              className='hidden z-50 my-4 w-56 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600'
+              className='hidden z-50 my-4 w-56 text-base list-none bg-white rounded divide-y divide-gray-100 shadow'
               id='dropdown'
             >
               <div className='py-3 px-4'>
-                <span className='block text-sm font-semibold text-gray-900 dark:text-white'>
+                <span className='block text-sm font-semibold text-gray-900'>
                   Neil sims
                 </span>
-                <span className='block text-sm font-light text-gray-500 truncate dark:text-gray-400'>
+                <span className='block text-sm font-light text-gray-500 truncate'>
                   name@flowbite.com
                 </span>
               </div>
 
               <ul
-                className='py-1 font-light text-gray-500 dark:text-gray-400'
+                className='py-1 font-light text-gray-500'
                 aria-labelledby='dropdown'
               >
                 <li>
                   <a
                     href='#'
-                    className='block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white'
+                    className='block py-2 px-4 text-sm hover:bg-gray-100'
                   >
                     Sign out
                   </a>

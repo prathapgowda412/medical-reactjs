@@ -13,10 +13,18 @@ axios.defaults.headers.common['Access-Control-Allow-Headers'] =
 
 axios.defaults.headers.common['Access-Control-Max-Age'] = '600';
 
+// for patient token
 let userToken = LocalstorageService.getPatientToken();
 if (userToken) axios.defaults.headers.common['auth-token'] = userToken;
 export const setAuthToken = (token) => {
   axios.defaults.headers.common['auth-token'] = token;
+};
+
+// for admin token
+let adminToken = LocalstorageService.getAdminToken();
+if (adminToken) axios.defaults.headers.common['admin-token'] = adminToken;
+export const setAdminAuthToken = (token) => {
+  axios.defaults.headers.common['admin-token'] = token;
 };
 
 axios.interceptors.response.use(

@@ -18,6 +18,7 @@ import { useAuth } from './contexts/auth/authContext';
 import ADminBookingsPage from './pages/admin/bookings';
 import AdminPatientsPage from './pages/admin/patients';
 import AdminLayout from './components/admin-components/layout/admin-layout';
+import AdminLoginPage from './pages/admin/admin-login';
 
 export function Router() {
   const { isAuthorized } = useAuth();
@@ -70,6 +71,10 @@ export function Router() {
               <AdminPatientsPage />
             </AdminLayout>
           ),
+        },
+        {
+          path: ROUTES.ADMIN_LOGIN,
+          element: <AdminLoginPage />,
         },
       ],
     },

@@ -12,4 +12,5 @@ export const ROUTES = {
 
   ADMIN_BOOKINGS: '/admin/bookings',
   ADMIN_PATIENTS: '/admin/patients',
+  ADMIN_LOGIN: '/admin/login',
 };

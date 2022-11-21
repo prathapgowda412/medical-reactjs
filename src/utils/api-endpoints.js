@@ -5,4 +5,8 @@ export const API_ENDPOINTS = {
 
   book_appointment: '/bookings/book-appointment',
   get_all_bookings: '/bookings/all-bookings',
+
+  admin_all_bookings: '/admin/all-bookings',
+  admin_login: '/admin/login',
+  admin_register: '/admin/register',
 };

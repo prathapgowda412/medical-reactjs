@@ -9,6 +9,7 @@ const BookingsPage = () => {
   const [pageSeq, setPageSeq] = useState(1);
 
   const { isLoading, data, isError } = useBookingsQuery({ pageSeq });
+
   if (isLoading) return <ButtonLoader text={'Fetching Bookings'} />;
 
   if (isError)
