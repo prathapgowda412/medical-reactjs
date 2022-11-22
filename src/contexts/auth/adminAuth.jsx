@@ -40,8 +40,6 @@ export const AdminAuthProvider = ({ children }) => {
 
   const adminLogin = useCallback(
     (data) => {
-      console.log('admin data', data);
-
       AdminServices.login(data)
         .then(({ data }) => {
           if (data?.success) {

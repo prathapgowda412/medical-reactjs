@@ -7,7 +7,6 @@ const AdminBookingCard = ({ bookingData }) => {
 
   const { bloodgroup, dob, email, height, name, phone, weight } =
     bookingData?.patient ?? {};
-  console.log('name', name);
 
   let dat = new Date(date);
 

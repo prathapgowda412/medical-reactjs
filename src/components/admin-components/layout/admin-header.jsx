@@ -1,6 +1,12 @@
-import React from 'react';
+import classNames from 'classnames';
+import React, { useState } from 'react';
+import { useAdminAuth } from '../../../contexts/auth/adminAuth';
 
 const AdminHeader = () => {
+  const [openProfileMenu, setOpenProfileMenu] = useState(false);
+
+  const { adminLogout, admin } = useAdminAuth();
+
   return (
     <header className='shadow-lg'>
       <nav className='bg-[#2b3d5b] border-gray-200 px-4 lg:px-6 py-2.5'>
@@ -88,6 +94,9 @@ const AdminHeader = () => {
             </div>
 
             <button
+              onClick={() => {
+                setOpenProfileMenu(!openProfileMenu);
+              }}
               type='button'
               className='flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300'
               id='user-menu-button'
@@ -103,15 +112,18 @@ const AdminHeader = () => {
             </button>
             {/* Dropdown menu */}
             <div
-              className='hidden z-50 my-4 w-56 text-base list-none bg-white rounded divide-y divide-gray-100 shadow'
+              className={classNames(
+                'absolute right-8 top-10 z-50 my-4 w-56 text-base list-none bg-white rounded divide-y divide-gray-100 shadow',
+                openProfileMenu ? '' : 'hidden'
+              )}
               id='dropdown'
             >
               <div className='py-3 px-4'>
                 <span className='block text-sm font-semibold text-gray-900'>
-                  Neil sims
+                  {admin?.name}
                 </span>
                 <span className='block text-sm font-light text-gray-500 truncate'>
-                  name@flowbite.com
+                  {admin?.email}
                 </span>
               </div>
 
@@ -120,12 +132,13 @@ const AdminHeader = () => {
                 aria-labelledby='dropdown'
               >
                 <li>
-                  <a
+                  <button
+                    onClick={adminLogout}
                     href='#'
                     className='block py-2 px-4 text-sm hover:bg-gray-100'
                   >
                     Sign out
-                  </a>
+                  </button>
                 </li>
               </ul>
             </div>

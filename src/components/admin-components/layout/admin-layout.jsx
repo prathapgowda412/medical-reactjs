@@ -9,7 +9,7 @@ const AdminLayout = ({ children }) => {
   const navigate = useNavigate();
   const { isAdminAuthorized } = useAdminAuth();
 
-  // if (isAdminAuthorized) navigate(ROUTES.ADMIN_BOOKINGS);
+  // if (isAdminAuthorized) navigate(ROUTES.ADMIN_LOGIN);
 
   return (
     <div className='relative h-full bg-gray-100 '>
