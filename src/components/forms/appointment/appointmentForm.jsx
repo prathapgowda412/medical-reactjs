@@ -8,12 +8,17 @@ import { ROUTES } from '../../../utils/ROUTES';
 
 import doctors from './../../../contexts/data/doctors.json';
 import specialists from './../../../contexts/data/specialist.json';
+import { useAuth } from '../../../contexts/auth/authContext';
 
 const AppointmentBookingForm = () => {
   const navigate = useNavigate();
+  const { isAuthorized } = useAuth();
   const { register, formState, handleSubmit } = useForm();
 
   const bookAppoint = (data) => {
+    // check if patient is logged in
+    if (!isAuthorized) return toast.error('login to book');
+
     BookingService.bookAppoint(data)
       .then(({ data }) => {
         if (data?.success) {
@@ -50,6 +55,7 @@ const AppointmentBookingForm = () => {
                 name='date'
                 id='date'
                 type={'date'}
+                min={new Date()}
                 {...register('date', { required: true })}
                 className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5'
               />

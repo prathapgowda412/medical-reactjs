@@ -15,7 +15,7 @@ const HeaderTwo = () => {
     <header className='fixed top-0 w-full z-50'>
       <nav className='bg-white border-gray-200 px-4 lg:px-6 py-2.5'>
         <div className='flex flex-wrap justify-between items-center mx-auto max-w-screen-xl'>
-          <Link href={ROUTES.HOMEPAGE} className='flex items-center'>
+          <Link to={ROUTES.HOMEPAGE} className='flex items-center'>
             <img
               src='/assets/logos/sams-logoo.png'
               className='mr-3 h-12'
