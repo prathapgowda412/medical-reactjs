@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { AiOutlineMenu } from 'react-icons/ai';
 import { IoClose } from 'react-icons/io5';
 import { IoIosMenu } from 'react-icons/io';
 import classNames from 'classnames';
@@ -35,16 +34,22 @@ const HeaderTwo = () => {
               ) : (
                 <div className=' items-center justify-end flex  lg:w-0'>
                   <Link
-                    to={ROUTES.SIGNIN}
-                    className='whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900'
+                    to={ROUTES.ADMIN_LOGIN}
+                    className='mr-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent px-4 py-2 text-base font-medium text-indigo-700 shadow-sm hover:bg-indigo-700 hover:text-white'
                   >
-                    Sign in
+                    Admin
                   </Link>
                   <Link
                     to={ROUTES.SIGNUP}
+                    className='whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900'
+                  >
+                    Sign Up
+                  </Link>
+                  <Link
+                    to={ROUTES.SIGNIN}
                     className='ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700'
                   >
-                    Sign up
+                    Sign In
                   </Link>
                 </div>
               )}
@@ -91,10 +96,10 @@ const HeaderTwo = () => {
               </li>
               <li>
                 <Link
-                  to={ROUTES.CONTACTUS}
-                  className='block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 '
+                  to={ROUTES.APPOINTMENT}
+                  className='block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-indigo-700 lg:p-0 '
                 >
-                  Contact
+                  Book an appointment
                 </Link>
               </li>
             </ul>

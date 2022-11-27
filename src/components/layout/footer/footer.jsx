@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { ROUTES } from '../../../utils/ROUTES';
 
 const Footer = () => {
   return (
@@ -8,54 +10,36 @@ const Footer = () => {
         <div className='mx-auto max-w-screen-xl text-center'>
           <img
             src='/assets/logos/sams-logoo.png'
-            href='#'
+            alt=''
             className='h-14 my-4 mx-auto text-2xl font-semibold text-gray-900'
           />
 
           <ul className='flex flex-wrap justify-center items-center mb-6 text-gray-900'>
             <li>
-              <a href='#' className='mr-4 hover:underline md:mr-6 '>
+              <Link
+                to={ROUTES.HOMEPAGE}
+                className='mr-4 hover:underline md:mr-6'
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                to={ROUTES.ABOUTUS}
+                className='mr-4 hover:underline md:mr-6 '
+              >
                 About
-              </a>
+              </Link>
             </li>
             <li>
-              <a href='#' className='mr-4 hover:underline md:mr-6'>
-                Premium
-              </a>
-            </li>
-            <li>
-              <a href='#' className='mr-4 hover:underline md:mr-6 '>
-                Campaigns
-              </a>
-            </li>
-            <li>
-              <a href='#' className='mr-4 hover:underline md:mr-6'>
-                Blog
-              </a>
-            </li>
-            <li>
-              <a href='#' className='mr-4 hover:underline md:mr-6'>
-                Affiliate Program
-              </a>
-            </li>
-            <li>
-              <a href='#' className='mr-4 hover:underline md:mr-6'>
-                FAQs
-              </a>
-            </li>
-            <li>
-              <a href='#' className='mr-4 hover:underline md:mr-6'>
-                Contact
-              </a>
+              <Link
+                to={ROUTES.ADMIN_LOGIN}
+                className='mr-4 hover:underline md:mr-6 '
+              >
+                Admin
+              </Link>
             </li>
           </ul>
-          {/* <span className='text-sm text-gray-500 sm:text-center'>
-            © 2021-2022{' '}
-            <a href='#' className='hover:underline'>
-              Flowbite™
-            </a>
-            . All Rights Reserved.
-          </span> */}
         </div>
       </footer>
     </div>

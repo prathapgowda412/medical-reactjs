@@ -4,7 +4,6 @@ export const ROUTES = {
   SIGNUP: '/signup',
   ABOUTUS: '/about-us',
   CONTACTUS: '/contact-us',
-  BOOKING: '/book-appointment',
   PROFILE: '/profile',
   APPOINTMENT: '/appointment',
   PROFILE_DETAILS: '/profile/details',

@@ -8,14 +8,14 @@ const AboutUs = () => {
       <section className='bg-white'>
         <div className='my-8 py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12'>
           <h1 className='mt-8 mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl'>
-            We invest in the world’s potential
+            SAMS <br /> (Smart Appointment Management Service)
           </h1>
-          <p className='mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48'>
+          {/* <p className='mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48'>
             Here at Flowbite we focus on markets where technology, innovation,
             and capital can unlock long-term value and drive economic growth.
-          </p>
+          </p> */}
 
-          <div className='px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36'>
+          {/* <div className='px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36'>
             <span className='font-semibold text-gray-400 uppercase'>
               FEATURED IN
             </span>
@@ -112,7 +112,7 @@ const AboutUs = () => {
                 </svg>
               </a>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -120,19 +120,17 @@ const AboutUs = () => {
       <section className='bg-white'>
         <div className='gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6'>
           <div className='font-light text-gray-500 sm:text-lg'>
-            <h2 className='mb-4 text-4xl tracking-tight font-extrabold text-gray-900'>
+            {/* <h2 className='mb-4 text-4xl tracking-tight font-extrabold text-gray-900'>
               We didn't reinvent the wheel
-            </h2>
+            </h2> */}
             <p className='mb-4'>
-              We are strategists, designers and developers. Innovators and
-              problem solvers. Small enough to be simple and quick, but big
-              enough to deliver the scope you want at the pace you need. Small
-              enough to be simple and quick, but big enough to deliver the scope
-              you want at the pace you need.
-            </p>
-            <p>
-              We are strategists, designers and developers. Innovators and
-              problem solvers. Small enough to be simple and quick.
+              SAMS (Smart Appointment Management System) is on a mission to make
+              affordable access to high-quality healthcare service available to
+              everyone. For the benefit of humanity, we are dedicated to
+              achieving and maintaining excellence in education, research, and
+              healthcare. SAMS gives you access to your health information and
+              with SAMS's Advanced appointment booking system, a patient can
+              book their appointments in few clicks with doctor of their choice.
             </p>
           </div>
           <div className='grid grid-cols-2 gap-4 mt-8'>

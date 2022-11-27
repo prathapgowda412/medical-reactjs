@@ -1,0 +1,18 @@
+[
+    {
+        "id":1,
+        "specialist":"Gastroenterologist"
+    },
+    {
+        "id":2,
+        "specialist":"Cardiology"
+    },
+    {
+        "id":3,
+        "specialist":"Psychologist"
+    },
+    {
+        "id":4,
+        "specialist":"Physician"
+    }
+]

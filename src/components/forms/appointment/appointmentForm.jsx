@@ -5,6 +5,10 @@ import BookingService from '../../../services/apis/booking.services';
 import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { ROUTES } from '../../../utils/ROUTES';
+
+import doctors from './../../../contexts/data/doctors.json';
+import specialists from './../../../contexts/data/specialist.json';
+
 const AppointmentBookingForm = () => {
   const navigate = useNavigate();
   const { register, formState, handleSubmit } = useForm();
@@ -20,6 +24,7 @@ const AppointmentBookingForm = () => {
           console.error('ERROR', data?.message);
         }
       })
+
       .catch((error) => {
         toast.error('Something went wrong');
         console.error('ERROR', error);
@@ -70,17 +75,18 @@ const AppointmentBookingForm = () => {
                 htmlFor='category'
                 className='block mb-2 text-sm font-medium text-gray-900  '
               >
-                For
+                Specialist
               </label>
               <select
                 {...register('service', { required: true })}
                 id='category'
                 className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5   '
               >
-                <option selected>Select Service</option>
-                <option value='physist'>Physist</option>
-                <option value='dental'>Dental</option>
-                <option value='gynocologist'>Gynocologist</option>
+                {specialists.map((item) => (
+                  <option value={item.specialist} key={item.id}>
+                    {item.specialist}
+                  </option>
+                ))}
               </select>
             </div>
             <div>
@@ -88,17 +94,16 @@ const AppointmentBookingForm = () => {
                 htmlFor='category'
                 className='block mb-2 text-sm font-medium text-gray-900  '
               >
-                For
+                Select Doctor
               </label>
               <select
                 {...register('doctor', { required: true })}
                 id='category'
                 className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5   '
               >
-                <option selected>Select Doctor</option>
-                <option value='physist'>Dr. Dev</option>
-                <option value='dental'>Dr. John</option>
-                <option value='gynocologist'>Dr. Sam</option>
+                <option value='Dr. Dev'>Dr. Dev</option>
+                <option value='Dr. John'>Dr. John</option>
+                <option value='Dr. Sam'>Dr. Sam</option>
               </select>
             </div>
 

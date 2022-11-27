@@ -1,0 +1,37 @@
+[
+    {
+        "id":1,
+        "name":"Dr. Sam",
+        "specialist":"Physician"
+    },
+    {
+        "id":2,
+        "name":"Dr. John",
+        "specialist":"Physician"
+    },
+    {
+        "id":3,
+        "name":"Dr. Anna",
+        "specialist":"Cardiology"
+    },
+    {
+        "id":4,
+        "name":"Dr. Angela",
+        "specialist":"Gastroenterologist"
+    },
+    {
+        "id":4,
+        "name":"Dr. Samantha",
+        "specialist":"Gastroenterologist"
+    },
+    {
+        "id":4,
+        "name":"Dr. Lauren",
+        "specialist":"Cardiology"
+    },
+    {
+        "id":4,
+        "name":"Dr. Rebecca",
+        "specialist":"Psychologist"
+    }
+]

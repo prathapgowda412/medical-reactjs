@@ -64,10 +64,7 @@ const AdminHeader = () => {
               </svg>
               <span className='sr-only'>Toggle sidebar</span>
             </button>
-            <a
-              href='https://flowbite.com'
-              className='flex mr-4 text-white font-bold'
-            >
+            <p className='flex mr-4 text-white font-bold'>
               ADMIN PANEL
               {/* <img
                 src='https://flowbite.s3.amazonaws.com/logo.svg'
@@ -77,7 +74,7 @@ const AdminHeader = () => {
               <span className='self-center text-2xl font-semibold whitespace-nowrap '>
                 Flowbite
               </span> */}
-            </a>
+            </p>
           </div>
           <div className='flex items-center lg:order-2'>
             {/* Notifications */}
@@ -104,11 +101,16 @@ const AdminHeader = () => {
               data-dropdown-toggle='dropdown'
             >
               <span className='sr-only'>Open user menu</span>
-              <img
+              {/* <img
                 className='w-8 h-8 rounded-full'
                 src='https://flowbite.com/docs/images/people/profile-picture-5.jpg'
                 alt='user photo'
-              />
+              /> */}
+              <div className='inline-flex overflow-hidden relative justify-center items-center w-10 h-10 bg-gray-100 rounded-full dark:bg-gray-600'>
+                <span className='font-medium text-gray-600 dark:text-gray-300'>
+                  A
+                </span>
+              </div>
             </button>
             {/* Dropdown menu */}
             <div

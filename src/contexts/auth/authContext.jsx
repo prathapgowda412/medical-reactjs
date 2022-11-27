@@ -35,6 +35,7 @@ export const AuthProvider = ({ children }) => {
     setUserToken(null);
     setIsAuthorized(false);
     navigate(ROUTES.HOMEPAGE);
+    window.location.reload();
   }, [navigate]);
 
   const patientLogin = useCallback(
