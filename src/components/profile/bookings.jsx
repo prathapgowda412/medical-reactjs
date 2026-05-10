@@ -1,6 +1,5 @@
 import React from 'react';
 import { CiCalendarDate, CiTimer } from 'react-icons/ci';
-import Pagination from '../common/pagination/pagination';
 
 const BookingCard = ({ booking }) => {
   const { date, time, service, comments, doctor, status } = booking ?? {};

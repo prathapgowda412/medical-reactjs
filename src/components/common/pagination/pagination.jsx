@@ -1,7 +1,6 @@
 import React from 'react';
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
 const Pagination = ({ totalPages = 1, currentPage = 1, handlePage }) => {
-  const setPage = () => {};
   return (
     <nav
       aria-label='Page navigation example'

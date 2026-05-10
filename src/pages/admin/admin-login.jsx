@@ -1,15 +1,11 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Link, Navigate } from 'react-router-dom';
-import { ROUTES } from '../../utils/ROUTES';
-import { useAuth } from '../../contexts/auth/authContext';
 import { useAdminAuth } from '../../contexts/auth/adminAuth';
 
 const AdminLoginPage = () => {
-  const { register, handleSubmit, setError, formState } = useForm();
+  const { register, handleSubmit } = useForm();
 
-  const { patientLogin, isAuthorized } = useAuth();
-  const { adminLogin, isAdminAuthorized } = useAdminAuth();
+  const { adminLogin } = useAdminAuth();
   // if (isAdminAuthorized) return <Navigate to={ROUTES.HOMEPAGE} />;
 
   return (

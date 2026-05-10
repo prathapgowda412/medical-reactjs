@@ -16,7 +16,7 @@ const bloodgroups = [
 ];
 
 const SignUpForm = () => {
-  const { register, handleSubmit, formState } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const { patientRegister, isAuthorized } = useAuth();
   if (isAuthorized) return <Navigate to={ROUTES.HOMEPAGE} />;

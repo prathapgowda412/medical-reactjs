@@ -21,14 +21,14 @@ export const AdminAuthProvider = ({ children }) => {
   const [admin, setAdmin] = useState(
     LocalstorageService.getAdmintdata() ?? null
   );
-  const [adminToken, setAdminToken] = useState(
+  const [, setAdminToken] = useState(
     LocalstorageService.getAdminToken() ?? null
   );
   const [isAdminAuthorized, setIsAdminAuthorized] = useState(
     LocalstorageService.getAdminToken() ?? false
   );
 
-  useEffect(() => {}, []);
+  useEffect(() => { }, []);
 
   const adminLogout = useCallback(() => {
     LocalstorageService.removeAdminData();

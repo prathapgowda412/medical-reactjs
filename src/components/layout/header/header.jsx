@@ -10,7 +10,7 @@ import { useAuth } from '../../../contexts/auth/authContext';
 
 const HeaderTwo = () => {
   const [openNav, setOpenNav] = useState(false);
-  const { isAuthorized, user } = useAuth();
+  const { isAuthorized } = useAuth();
   return (
     <header className='fixed top-0 w-full z-50'>
       <nav className='bg-white border-gray-200 px-4 lg:px-6 py-2.5'>

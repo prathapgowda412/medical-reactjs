@@ -20,14 +20,14 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(
     LocalstorageService.getPatientdata() ?? null
   );
-  const [userToken, setUserToken] = useState(
+  const [, setUserToken] = useState(
     LocalstorageService.getPatientToken() ?? null
   );
   const [isAuthorized, setIsAuthorized] = useState(
     LocalstorageService.getPatientToken() ?? false
   );
 
-  useEffect(() => {}, []);
+  useEffect(() => { }, []);
 
   const patientLogout = useCallback(() => {
     LocalstorageService.removePatientData();

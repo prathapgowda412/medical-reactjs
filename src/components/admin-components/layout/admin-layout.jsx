@@ -2,12 +2,9 @@ import React from 'react';
 import { useAdminAuth } from '../../../contexts/auth/adminAuth';
 import AdminHeader from './admin-header';
 import AdminSidebar from './admin-sidebar';
-import { useNavigate } from 'react-router-dom';
-import { ROUTES } from '../../../utils/ROUTES';
 
 const AdminLayout = ({ children }) => {
-  const navigate = useNavigate();
-  const { isAdminAuthorized } = useAdminAuth();
+  useAdminAuth();
 
   // if (isAdminAuthorized) navigate(ROUTES.ADMIN_LOGIN);
 

@@ -5,7 +5,7 @@ import { ROUTES } from '../../utils/ROUTES';
 import { useAuth } from '../../contexts/auth/authContext';
 
 const SigninForm = () => {
-  const { register, handleSubmit, setError, formState } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const { patientLogin, isAuthorized } = useAuth();
   if (isAuthorized) return <Navigate to={ROUTES.HOMEPAGE} />;

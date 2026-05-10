@@ -1,17 +1,8 @@
 /* This example requires Tailwind CSS v3.0+ */
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../../utils/ROUTES';
 
-const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
-];
-
 export default function HeroSection() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div className=' bg-white'>

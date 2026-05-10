@@ -1,19 +1,16 @@
-import React, { useState } from 'react';
-
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import BookingService from '../../../services/apis/booking.services';
 import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { ROUTES } from '../../../utils/ROUTES';
-
-import doctors from './../../../contexts/data/doctors.json';
 import specialists from './../../../contexts/data/specialist.json';
 import { useAuth } from '../../../contexts/auth/authContext';
 
 const AppointmentBookingForm = () => {
   const navigate = useNavigate();
   const { isAuthorized } = useAuth();
-  const { register, formState, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const bookAppoint = (data) => {
     // check if patient is logged in
