@@ -1,7 +1,4 @@
 import React from 'react';
-import Layout from '../../components/layout/layout';
-
-import { EnvelopeIcon, LockClosedIcon } from '@heroicons/react/20/solid';
 import SignUpForm from '../../components/forms/signupform/signUpForm';
 
 /*

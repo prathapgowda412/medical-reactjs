@@ -13,7 +13,7 @@ const AdminPatientsPage = () => {
 
   const { isAdminAuthorized } = useAdminAuth();
 
-  const { data, isLoading, error, isError } = useAdminAllPatients({ pageSeq });
+  const { data, isLoading, isError } = useAdminAllPatients({ pageSeq });
 
   if (!isAdminAuthorized) navigate(ROUTES.ADMIN_LOGIN);
 

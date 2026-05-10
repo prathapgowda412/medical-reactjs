@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import ButtonLoader from '../../components/common/loaders/button-loader';
 import Pagination from '../../components/common/pagination/pagination';
 import BookingCard from '../../components/profile/bookings';
-import ProfileBookings from '../../components/profile/bookings';
 import { useBookingsQuery } from '../../services/apis/fetchqueries';
 
 const BookingsPage = () => {
